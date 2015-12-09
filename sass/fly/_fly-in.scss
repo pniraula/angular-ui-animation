@@ -1,0 +1,54 @@
+.au-fly-in{
+  &.top{
+    animation:fly-in-top-animation linear;
+  }
+  &.bottom{
+    animation:fly-in-bottom-animation linear;
+  }
+  &.left{
+    animation:fly-in-left-animation linear;
+  }
+  &.right{
+    animation:fly-in-right-animation linear;
+  }
+  @keyframes fly-in-top-animation {
+        0%{
+          opacity: 0;
+          transform:translate3d(0,-100%,0);
+        }
+        100%{
+          opacity:1;
+          transform: translate3d(0,0,0);
+        }
+  }
+  @keyframes fly-in-bottom-animation {
+        0%{
+          opacity: 0;
+          transform:translate3d(0,100%,0);
+        }
+        100%{
+          opacity:1;
+          transform: translate3d(0,0,0);
+        }
+  }
+  @keyframes fly-in-left-animation {
+        0%{
+          opacity: 0;
+          transform:translate3d(100%,0,0);
+        }
+        100%{
+          opacity:1;
+          transform: translate3d(0,0,0);
+        }
+  }
+  @keyframes fly-in-right-animation {
+        0%{
+          opacity: 0;
+          transform:translate3d(-100%,0,0);
+        }
+        100%{
+          opacity:1;
+          transform: translate3d(0,0,0);
+        }
+  }
+}

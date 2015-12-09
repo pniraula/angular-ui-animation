@@ -1,0 +1,37 @@
+{
+  "name": "angular-ui-animation",
+  "description": "Animation for angular apps.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pniraula/angular-ui-animation",
+  "license": "MIT",
+  "private": false,
+  "main": "./dist/angular-ui-animation.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "angular": "^1.4.6",
+    "angular-aria": "^1.4.6",
+    "angular-mocks": "~1.4.8",
+    "angular-scenario": "~1.4.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "component.json",
+    "package.json",
+    "lib",
+    "config",
+    "test",
+    "tests",
+    "gulpfile.js",
+    "sass",
+    "demo",
+    ".git",
+    "src",
+    "index.html",
+    ".gitignore",
+    "bower.json"
+  ]
+}

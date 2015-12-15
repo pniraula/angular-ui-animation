@@ -52,4 +52,12 @@ gulp.task("scripts-watch", ["scripts"], bs.reload);
 
 gulp.task('default', ['serve', 'lint','sass', 'scripts', 'watch']);
 
-gulp.task('gulp-travis', ['lint','sass', 'scripts', 'watch']);
+gulp.task('gulp-travis', ['lint','sass', 'scripts'], function(done){
+  return gulp
+  .on('error', function(err) {
+    process.exit(err);
+  })
+  .on('end', function(){
+    process.exit();
+  });
+});

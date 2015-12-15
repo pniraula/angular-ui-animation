@@ -25,15 +25,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(dir+"/"));
 });
 gulp.task("sass-watch",['sass'], bs.reload);
-gulp.task('minify-css', function() {
-  return gulp.src('dist/**/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(minifyCss())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist'));
-});
-gulp.task("sass-watch-minify",['minify-css'], bs.reload);
-
 gulp.task('scripts', function() {
     return gulp.src('./src/**/*.js')
         .pipe(sourcemaps.init())

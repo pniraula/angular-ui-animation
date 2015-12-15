@@ -51,3 +51,5 @@ gulp.task('watch', function() {
 gulp.task("scripts-watch", ["scripts"], bs.reload);
 
 gulp.task('default', ['serve', 'lint','sass', 'scripts', 'watch']);
+
+gulp.task('gulp-travis', ['lint','sass', 'scripts', 'watch']);

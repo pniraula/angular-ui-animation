@@ -4,7 +4,6 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var argv = require('yargs').argv;
 var browserify = require('gulp-browserify');
 var util = require("gulp-util");
 var sourcemaps = require("gulp-sourcemaps");

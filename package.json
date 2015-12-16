@@ -11,10 +11,6 @@
     "AngularJS",
     "Animation"
   ],
-  "bin": {
-    "ng-ui-animate": "./bin/angular-ui-animation"
-  },
-  "dependencies": {},
   "engines": {
     "node": "*"
   },

@@ -12,19 +12,51 @@ angular
           link:function(scope, element, attr){
             var duration = util.attr(element,'duration')||300;
             var direction =  util.attr(element,'direction')||'vertical';
-            util.css(element, 'animationDuration', duration/1000+'s');
-            element.addClass('au-flip-in');
-            element.addClass(direction);
-              $timeout(function () {
-                element.removeClass('au-flip-in');
-                element.removeClass(direction);
+            var when = util.attr(element, 'when')||'init';
+            when = when.split(",");
+            console.log(when);
+            var animation = function(){
+                util.css(element, 'animationDuration', duration/1000+'s');
+                element.addClass('au-flip-in');
+                element.addClass(direction);
+                $timeout(function () {
+                  element.removeClass('au-flip-in');
+                  element.removeClass(direction);
               }, duration);
+            }
+            for(var i in when){
+              if(when[i] === 'init'){
+                animation();
+              }else{
+                element.bind(when[i], animation);
+              }
+            }
           }
       };
   }]);
 
 angular
   .module("angularUiAnimation.flip", ['angularUiAnimation.flip.flipIn']);
+
+angular.module("angularUiAnimation.util",[])
+  .factory('util',function(){
+    var self = this;
+    self.css = function (el, attr, value){
+      var element = el[0];
+      if(value){
+        element.style[attr] = value;
+      }
+      return element.style[attr];
+    };
+    self.attr = function(el, attr, value){
+      var element = el[0];
+      if(value){
+        element.setAttribute(attr, value);
+      }
+      return element.getAttribute(attr);
+    }
+    return self;
+  });
 
 angular
   .module("angularUiAnimation.fly.flyIn", [])
@@ -48,23 +80,3 @@ angular
 
 angular
   .module("angularUiAnimation.fly", ['angularUiAnimation.fly.flyIn']);
-
-angular.module("angularUiAnimation.util",[])
-  .factory('util',function(){
-    var self = this;
-    self.css = function (el, attr, value){
-      var element = el[0];
-      if(value){
-        element.style[attr] = value;
-      }
-      return element.style[attr];
-    };
-    self.attr = function(el, attr, value){
-      var element = el[0];
-      if(value){
-        element.setAttribute(attr, value);
-      }
-      return element.getAttribute(attr);
-    }
-    return self;
-  });

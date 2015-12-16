@@ -28,13 +28,13 @@
   </head>
 
   <body ng-app="demo" layout="row"  ng-cloak ng-controller="DemoCtrl as dctrl" >
-      <div class="demo" fly-in duration="300" direction="left">
+      <div class="demo" fly-in duration="300" direction="left" when="click">
         fly-in left
       </div>
       <div  class="demo" fly-in duration="300" direction="top" style='margin-top:10px;'>
         fly-in top
       </div>
-      <div  class="demo" flip-in duration="300" direction="vertical" style='margin-top:10px;'>
+      <div  class="demo" flip-in duration="300" direction="vertical" when="click" style='margin-top:10px;'>
           flip-in vertical
       </div>
       <div  class="demo" flip-in duration="300" direction="horizontal" style='margin-top:10px;'>
